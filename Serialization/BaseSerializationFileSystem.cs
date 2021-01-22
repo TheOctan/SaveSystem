@@ -48,7 +48,7 @@ namespace Assets.Scripts.SaveSystem.Serialization
 
 		private string SavePath(string key)
 		{
-			return DirectoryName + key + "." + Extension;
+			return DirectoryName + '/' + key + '.' + Extension;
 		}
 
 		protected abstract bool SaveObjectImplementaion<T>(Stream stream, T obj);
