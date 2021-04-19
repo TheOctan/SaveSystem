@@ -7,7 +7,7 @@ namespace SaveSystems
 {
 	public class SaveSystem
 	{
-		private static ISerializationFileSystem serializationFileSystem = new BinarySerializationSystem(Application.dataPath + "/Saves/");
+		private static ISerializationFileSystem serializationFileSystem = new BinarySerializationSystem(Application.persistentDataPath + "/Saves/");
 
 		public static bool Save<T>(string saveName, T saveData)
 		{
@@ -27,7 +27,8 @@ namespace SaveSystems
 		}
 		public static bool HasKey(string key)
 		{
-			return File.Exists(serializationFileSystem.DirectoryName + key + serializationFileSystem.Extension);
+			var targetPath = $"{serializationFileSystem.DirectoryName}{key}.{serializationFileSystem.Extension}";
+			return File.Exists(targetPath);
 		}
 		public static bool ResetSave(string key)
 		{
