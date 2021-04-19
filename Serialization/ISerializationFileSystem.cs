@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.SaveSystem.Serialization
+﻿namespace SaveSystems.Serialization
 {
 	public interface ISerializationFileSystem : ISerializationSystem
 	{

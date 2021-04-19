@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace Assets.Scripts.SaveSystem.Serialization
+namespace SaveSystems.Serialization
 {
 	public abstract class TextSerializationSystem : BaseSerializationFileSystem
 	{

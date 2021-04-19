@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization;
 
-namespace Assets.Scripts.SaveSystem.Serialization
+namespace SaveSystems.Serialization
 {
 	public abstract class FormatterSerialisationSystem<T> : BaseSerializationFileSystem where T : IFormatter, new()
 	{

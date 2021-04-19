@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Assets.Scripts.SaveSystem.Serialization.Format
+namespace SaveSystems.Serialization.Format
 {
 	public class JsonSerializationSystem : TextSerializationSystem
 	{

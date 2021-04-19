@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 
-namespace Assets.Scripts.SaveSystem.Serialization.Format
+namespace SaveSystems.Serialization.Format
 {
 	public class XmlSerializationSystem : BaseSerializationFileSystem
 	{

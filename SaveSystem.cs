@@ -1,17 +1,17 @@
-﻿using Assets.Scripts.SaveSystem.Serialization;
-using Assets.Scripts.SaveSystem.Serialization.Format;
+﻿using SaveSystems.Serialization;
+using SaveSystems.Serialization.Format;
 using System.IO;
 using UnityEngine;
 
-namespace Assets.Scripts.SaveSystem
+namespace SaveSystems
 {
 	public class SaveSystem
 	{
-		private static ISerializationFileSystem serializationFileSystem = new JsonSerializationSystem(Application.dataPath + "/Saves/");
+		private static ISerializationFileSystem serializationFileSystem = new BinarySerializationSystem(Application.dataPath + "/Saves/");
 
 		public static bool Save<T>(string saveName, T saveData)
 		{
-			return serializationFileSystem.SerializeObject<T>(saveData, saveName);
+			return serializationFileSystem.SerializeObject(saveData, saveName);
 		}
 		public static T Load<T>(string path)
 		{

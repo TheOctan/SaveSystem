@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization.Formatters.Soap;
 
-namespace Assets.Scripts.SaveSystem.Serialization.Format
+namespace SaveSystems.Serialization.Format
 {
 	public class SoapSerializationSystem : FormatterSerialisationSystem<SoapFormatter>
 	{

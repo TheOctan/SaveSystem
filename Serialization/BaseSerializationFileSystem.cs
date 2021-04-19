@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Assets.Scripts.SaveSystem.Serialization
+namespace SaveSystems.Serialization
 {
 	public abstract class BaseSerializationFileSystem : ISerializationFileSystem, ISerializationSystem
 	{
@@ -35,7 +35,7 @@ namespace Assets.Scripts.SaveSystem.Serialization
 		}
 		public virtual T DeserializeObject<T>(string key)
 		{
-			if(!File.Exists(SavePath(key)))
+			if (!File.Exists(SavePath(key)))
 			{
 				return default;
 			}
