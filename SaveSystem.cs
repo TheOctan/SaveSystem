@@ -19,6 +19,11 @@ namespace SaveSystems
 			{
 				return serializationFileSystem.DeserializeObject<T>(path);
 			}
+			catch (InvalidCastException e)
+			{
+				Debug.LogError(e.Message);
+				return default;
+			}
 			catch
 			{
 				Debug.LogError($"Failed to load file at {path}");
