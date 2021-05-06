@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SaveSystems.Serialization.Format
+namespace OctanGames.SaveModule.Serialization.Format
 {
 	public class JsonUnitySerializationSystem : TextSerializationSystem
 	{

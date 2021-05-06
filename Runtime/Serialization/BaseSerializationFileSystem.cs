@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace SaveSystems.Serialization
+namespace OctanGames.SaveModule.Serialization
 {
 	public abstract class BaseSerializationFileSystem : ISerializationFileSystem, ISerializationSystem
 	{
@@ -26,7 +26,7 @@ namespace SaveSystems.Serialization
 
 			using (FileStream stream = new FileStream(SavePath(key), FileMode.Create))
 			{
-				return SaveObjectImplementaion(stream, obj);
+				return HandleSaveObject(stream, obj);
 			}
 		}
 		public T DeserializeObject<T>()
@@ -42,7 +42,7 @@ namespace SaveSystems.Serialization
 
 			using (FileStream stream = new FileStream(SavePath(key), FileMode.Open))
 			{
-				return LoadObjectImplementatio<T>(stream);
+				return HandleLoadObject<T>(stream);
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace SaveSystems.Serialization
 			return $"{DirectoryName}{key}.{Extension}";
 		}
 
-		protected abstract bool SaveObjectImplementaion<T>(Stream stream, T obj);
-		protected abstract T LoadObjectImplementatio<T>(Stream stream);
+		protected abstract bool HandleSaveObject<T>(Stream stream, T obj);
+		protected abstract T HandleLoadObject<T>(Stream stream);
 	}
 }

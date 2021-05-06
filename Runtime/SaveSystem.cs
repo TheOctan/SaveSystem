@@ -1,13 +1,14 @@
-﻿using SaveSystems.Serialization;
-using SaveSystems.Serialization.Format;
+﻿using OctanGames.SaveModule.Serialization;
+using OctanGames.SaveModule.Serialization.Format;
+using System;
 using System.IO;
 using UnityEngine;
 
-namespace SaveSystems
+namespace OctanGames.SaveModule
 {
 	public class SaveSystem
 	{
-		private static ISerializationFileSystem serializationFileSystem = new BinarySerializationSystem(Application.persistentDataPath + "/Saves/");
+		private static ISerializationFileSystem serializationFileSystem = new JsonSerializationSystem(Application.persistentDataPath + "/Saves/");
 
 		public static bool Save<T>(string saveName, T saveData)
 		{

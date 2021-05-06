@@ -1,4 +1,4 @@
-﻿namespace SaveSystems.Serialization
+﻿namespace OctanGames.SaveModule.Serialization
 {
 	public interface ISerializationSystem
 	{

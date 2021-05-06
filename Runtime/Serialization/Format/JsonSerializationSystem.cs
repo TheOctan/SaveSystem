@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SaveSystems.Serialization.Format
+namespace OctanGames.SaveModule.Serialization.Format
 {
 	public class JsonSerializationSystem : TextSerializationSystem
 	{
@@ -13,7 +13,7 @@ namespace SaveSystems.Serialization.Format
 		protected override T GetObject<T>(string line)
 		{
 			return JsonConvert.DeserializeObject<T>(line);
-		} 
+		}
 
 		protected override string GetString<T>(T obj)
 		{

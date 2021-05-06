@@ -1,19 +1,19 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace SaveSystems.Serialization
+namespace OctanGames.SaveModule.Serialization
 {
 	public abstract class TextSerializationSystem : BaseSerializationFileSystem
 	{
-		public override abstract string Extension { get; }
 		public TextSerializationSystem(string directoryName) : base(directoryName)
 		{
 		}
+		public override abstract string Extension { get; }
 
 		protected abstract string GetString<T>(T obj);
 		protected abstract T GetObject<T>(string line);
 
-		protected override T LoadObjectImplementatio<T>(Stream stream)
+		protected override T HandleLoadObject<T>(Stream stream)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
 			using (var streamReader = new StreamReader(stream))
@@ -34,7 +34,7 @@ namespace SaveSystems.Serialization
 			return obj;
 		}
 
-		protected override bool SaveObjectImplementaion<T>(Stream stream, T obj)
+		protected override bool HandleSaveObject<T>(Stream stream, T obj)
 		{
 			var line = GetString(obj);
 			using (var writer = new StreamWriter(stream))

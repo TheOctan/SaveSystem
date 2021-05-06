@@ -1,77 +1,36 @@
-# Save System
+# Unity Package - Save System
 
 <div align="left">
   <img src="Save.png" alt="SaveSystem" width="400">
 </div>
 
 ## Serialization formats
-* Json Newtonsoft
+* Newtonsoft Json
 * Unity Json
 * XML
 * SOAP
 * Bynary
 
 ## Documentation
-| Function              	| Description  						|
-|---------------------------|-----------------------------------------------------------|
-| Save     		    | Saves data by key						|
-| Load			    | Loads data by key						|
-| HasKey 		    | Сhecks for a saved file by key				|
-| ResetSave       	    | Removes the file by key					|
-| ResetAllSaves   	    | Removes all files						|
-| SetSaveDirectory   	    | Sets the target directory for saving			|
-| SetSerializationSystem    | Sets the serialization object for serialization format	|
+Detailed information can be found in the [documentation] section.
+
+## Installing
+The suggested way to install this package is through the Unity's Package Manager itself, via a GIT url. This way, you will be notified once new versions get released, and you will be able to download them directly from the Unity Editor.
 
 
-## Code examples
-### Read-Write data
-```csharp
-SaveSystem.Save("key", data);		// save data by key
-var data = SaveSystem.Load<int>("key");	// load data
+**The GIT url you need to add to the Package manager is the following** (copy and paste it): **https://github.com/TheOctan/save-system.git**
 
-if(SaveSystem.HasKey("key"))		// check for a saved file by key
-{
-	// ...
-}
-```
-### Reset saves
-```csharp
-SaveSystem.ResetSave("key");	// delete file by key
-SaveSyste.ResetAllSaves();	// delete all saves
-```
+For more info on how to install custom packages from a GIT Url, please read here: https://docs.unity3d.com/Manual/upm-ui-giturl.html
 
-### Configurations
-```csharp
-// Set save path
-SaveSystem.SetSaveDirectory("C:/Users");
+## Contributing
+If you want to contribute:
 
-// Set new custom serialization format
-SaveSystem.SetSerializationSystem(new XmlSerializationSystem("C:/Users")); 
-```
+1. Fork the project: https://github.com/TheOctan/save-system/fork
+2. Create your own feature branch
+3. Commit your changes to GitHub
+4. Push to the branch 
+5. Create a new Pull Request
 
-### Write custom serialization format
-```csharp
-public class CustomSerializationFormat : BaseSerializationFileSystem
-{
-	public override string Extension => "txt"; // file extension without dot
+More information about contributing here: https://github.com/firstcontributions/first-contributions
 
-	public CustomSerializationFormat(string directoryName) : base(directoryName)
-	{}
-
-	// overrides for load object
-	protected override T LoadObjectImplementatio<T>(Stream stream)
-	{
-		// use for example StreamReader with stream for object loading
-		// ...
-		return someObject;	// returns object of type T
-	}
-
-	// override for save object
-	protected override bool SaveObjectImplementaion<T>(Stream stream, T obj)
-	{
-		// use for example StreamReader with stream for object saving
-		// ...
-		return true;	// return true for successful save
-	}
-}
-```
+[documentation]: https://github.com/TheOctan/save-system/Documentation~/SaveSystem.md

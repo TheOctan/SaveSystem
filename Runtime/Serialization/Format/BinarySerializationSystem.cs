@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Serialization.Formatters.Binary;
 
-namespace SaveSystems.Serialization.Format
+namespace OctanGames.SaveModule.Serialization.Format
 {
-	public class BinarySerializationSystem : FormatterSerialisationSystem<BinaryFormatter>
+	public class BinarySerializationSystem : FormatterSerializationSystem<BinaryFormatter>
 	{
 		public override string Extension => "bin";
 		public BinarySerializationSystem(string directoryName) : base(directoryName)
