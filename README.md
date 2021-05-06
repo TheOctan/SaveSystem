@@ -33,4 +33,4 @@ If you want to contribute:
 
 More information about contributing here: https://github.com/firstcontributions/first-contributions
 
-[documentation]: https://github.com/TheOctan/save-system/Documentation~/SaveSystem.md
+[documentation]: https://github.com/TheOctan/save-system/blob/master/Documentation~/SaveSystem.md
